@@ -1,0 +1,25 @@
+// Css variables
+:root{
+    --color-black: #444;
+    --color-light-grey:#F5F5F5;
+    --color-orange: #E57A41;
+    --color-green: #82BD50;
+}
+// Base styles
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html{
+    font-size:62.5%; //1em = 10px
+    color:var(--color-black); 
+}
+
+// Utility classes
+.orange{
+    color:var(--color-orange);
+}
+.green{
+    color:var(--color-green);
+}

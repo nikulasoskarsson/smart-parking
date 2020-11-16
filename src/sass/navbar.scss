@@ -1,0 +1,42 @@
+.navbar{
+    height:12rem;
+    background:var(--color-light-grey);
+    &__container{
+        height:100%;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:0 4rem;
+    }
+    &__logo{
+        &-text{
+            font-size:2rem;
+        }
+    }
+    &__list{
+        display:flex;
+        list-style: none;
+        &-item{
+            display:flex;
+            align-items: center;
+        }
+        &-item:not(:last-child){
+            margin-right: 6rem;
+        }
+        &-icon{
+            margin-right:1rem;
+            font-size:2rem;
+        }
+    }
+    &__link{
+        text-decoration: none;
+        color:var(--color-black);
+        font-size:1.8rem;
+    }
+
+    &__user{
+        &-icon{
+            font-size: 4rem;
+        }
+    }
+}
