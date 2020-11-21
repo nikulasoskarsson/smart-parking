@@ -1,0 +1,20 @@
+.signup{
+    background:#fff;
+    height: 65vh;
+    width: 60%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%,);
+    border-radius:0.5rem;
+
+    &__container{
+        padding:1rem 2rem;
+    }
+
+    &__heading{
+        font-size: 3.6rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
