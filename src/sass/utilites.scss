@@ -1,0 +1,37 @@
+.underline {
+  text-decoration: underline;
+}
+
+.padding-tb-2 {
+  padding: 2rem 0;
+}
+
+.margin-top-2 {
+  margin-top: 2rem;
+}
+
+.margin-top-4 {
+  margin-top: 4rem;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4rem;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+}
+
+//FLEX
+.row {
+  display: flex;
+}
+
+.row-align-center {
+  display: flex;
+  align-items: center;
+}
