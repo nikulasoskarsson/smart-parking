@@ -1,55 +1,35 @@
 import React, { useState } from 'react'
 import SelectableLocationItem from './SelectableLocationItem'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import SelectedParking from './SelectedParking'
 
-const SelectableLocationList = () => {
-  const [data] = useState([
-    {
-      estimatedTravelTime: {
-        unit: 'minutes',
-        time: 14,
-      },
-      streetName: 'Streetname 45',
-      zipCode: '2400 københavn NV',
-      hourlyRate: '2.00',
-    },
-    {
-      estimatedTravelTime: {
-        unit: 'minutes',
-        time: 14,
-      },
-      streetName: 'Streetname 45',
-      zipCode: '2400 københavn NV',
-      hourlyRate: '2.00',
-    },
-    {
-      estimatedTravelTime: {
-        unit: 'minutes',
-        time: 14,
-      },
-      streetName: 'Streetname 45',
-      zipCode: '2400 københavn NV',
-      hourlyRate: '2.00',
-    },
-    {
-      estimatedTravelTime: {
-        unit: 'minutes',
-        time: 14,
-      },
-      streetName: 'Streetname 45',
-      zipCode: '2400 københavn NV',
-      hourlyRate: '2.00',
-    },
-  ])
+const SelectableLocationList = ({
+  selectedParking,
+  setSelectedParking,
+  data,
+  children,
+}) => {
   return (
     <div className='search__locations margin-top-2'>
-      {data.length ? (
-        <>
-          {data.map((item) => (
-            <SelectableLocationItem item={item} />
-          ))}
-        </>
+      {selectedParking ? (
+        <SelectedParking item={selectedParking} />
       ) : (
-        <></>
+        <>
+          {data.length ? (
+            <>
+              {data.map((item) => (
+                <SelectableLocationItem
+                  item={item}
+                  setSelectedParking={setSelectedParking}
+                />
+              ))}
+            </>
+          ) : (
+            <></>
+          )}
+          {children}
+        </>
       )}
     </div>
   )

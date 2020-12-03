@@ -1,6 +1,7 @@
 import './App.scss'
 import SignUp from './components/auth/SignUp'
 import Navbar from './components/Layout/Navbar'
+import Map from './components/map/Map'
 import Search from './components/map/Search'
 
 function App() {
@@ -8,7 +9,10 @@ function App() {
     <div className='App' style={{ minHeight: '100vh', backgroundColor: 'red' }}>
       <Navbar />
       {/* <SignUp /> */}
-      <Search />
+      <div style={{ display: 'flex' }}>
+        <Map />
+        <Search />
+      </div>
     </div>
   )
 }

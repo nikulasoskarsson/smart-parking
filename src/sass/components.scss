@@ -6,3 +6,28 @@
   font-size: 1.8rem;
   text-decoration: none;
 }
+
+.button-gray {
+  padding: 1rem 4rem;
+  background: var(--color-lightest-grey);
+  border: 1px solid var(--color-dark-grey);
+  color: var(--color-black);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+
+  max-width: 25rem;
+}
+
+.login-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  a {
+    color: var(--color-green);
+    text-decoration: none;
+  }
+}

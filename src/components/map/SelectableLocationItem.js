@@ -5,9 +5,12 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons'
 
-const SelectableLocationItem = ({ item }) => {
+const SelectableLocationItem = ({ item, setSelectedParking }) => {
   return (
-    <div className='search__location-item'>
+    <div
+      className='search__location-item'
+      onClick={() => setSelectedParking(item)}
+    >
       <div className='search__location-item-content row'>
         <div className='search__location-item-left'>
           <div className='row-align-center'>

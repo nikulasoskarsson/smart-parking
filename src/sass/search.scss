@@ -43,6 +43,20 @@
     }
   }
 
+  &__back {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &-icon {
+      font-size: 1.8rem;
+      margin-right: 2rem;
+    }
+    &-text {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+  }
+
   // List of locations
   &__locations {
     overflow-y: scroll;
@@ -76,9 +90,10 @@
   }
   &__location {
     &-item {
-      height: 16rem;
+      min-height: 16rem;
       border-top: 1px solid #ebebeb;
       border-bottom: 1px solid #ebebeb;
+      cursor: pointer;
 
       &-content {
         padding: 4rem 4rem 0rem 4rem;
@@ -109,10 +124,20 @@
           top: 5px;
           padding: inherit;
         }
+        &-clock {
+          color: #e57a41;
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          padding: inherit;
+        }
         &-chevron {
           margin-top: 4rem;
           color: #676767;
         }
+      }
+      &-button {
+        margin-left: 4rem;
       }
       &-right {
         justify-self: end;

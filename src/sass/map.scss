@@ -1,0 +1,35 @@
+.map {
+  height: 45vw;
+  max-height: calc(100vh - 12rem);
+  width: 70%;
+  background: #fff;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  position: relative;
+
+  &__img {
+    border-radius: 0.5rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__button-container {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+
+    display: flex;
+  }
+
+  &__button {
+    height: 5rem;
+    width: 20rem;
+    background: #fff;
+    border: 1px solid var(--color-black);
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-left: 2rem;
+  }
+}
