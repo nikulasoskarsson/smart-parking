@@ -8,7 +8,6 @@ const SelectableLocationList = ({
   selectedParking,
   setSelectedParking,
   data,
-  children,
 }) => {
   return (
     <div className='search__locations margin-top-2'>
@@ -28,7 +27,6 @@ const SelectableLocationList = ({
           ) : (
             <></>
           )}
-          {children}
         </>
       )}
     </div>

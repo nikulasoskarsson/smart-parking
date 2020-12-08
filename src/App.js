@@ -3,6 +3,7 @@ import SignUp from './components/auth/SignUp'
 import Navbar from './components/Layout/Navbar'
 import Map from './components/map/Map'
 import Search from './components/map/Search'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 function App() {
   return (

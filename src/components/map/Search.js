@@ -6,10 +6,20 @@ import {
   faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons'
 import SelectableLocationList from './SelectableLocationList'
+import BookedParking from './BookedParking'
 
 const Search = () => {
   const [inputText, setInputText] = useState('')
-  const [selectedParking, setSelectedParking] = useState(null)
+  const [selectedParking, setSelectedParking] = useState({
+    estimatedTravelTime: {
+      unit: 'minutes',
+      time: 14,
+    },
+    streetName: 'Streetname 45',
+    zipCode: '2400 københavn NV',
+    hourlyRate: '2.00',
+  })
+  const [isBooked, setIsBooked] = useState(true)
 
   const [data] = useState([
     {
@@ -53,51 +63,68 @@ const Search = () => {
   return (
     <div className='search'>
       <div className='search__search-content'>
-        <h3 className='search__heading heading-secondary padding-tb-2'>
-          Search for your destination or select one near you
-        </h3>
-        {!selectedParking ? (
-          <div className='search__searchbar'>
-            <FontAwesomeIcon
-              className='search__searchbar-icon search__searchbar-icon-search'
-              icon={faSearch}
-              size='lg'
-            />
+        {!isBooked ? (
+          <>
+            <h3 className='search__heading heading-secondary padding-tb-2'>
+              Search for your destination or select one near you
+            </h3>
+            {!selectedParking ? (
+              <div className='search__searchbar'>
+                <FontAwesomeIcon
+                  className='search__searchbar-icon search__searchbar-icon-search'
+                  icon={faSearch}
+                  size='lg'
+                />
 
-            <input
-              type='text'
-              className='search__searchbar-input'
-              placeholder='Search'
-              onChange={(e) => setInputText(e.target.value)}
-              value={inputText}
-            />
-            <FontAwesomeIcon
-              className='search__searchbar-icon search__searchbar-icon-exit'
-              icon={faTimes}
-              size='lg'
-              onClick={() => setInputText('')}
-            />
-          </div>
+                <input
+                  type='text'
+                  className='search__searchbar-input'
+                  placeholder='Search'
+                  onChange={(e) => setInputText(e.target.value)}
+                  value={inputText}
+                />
+                <FontAwesomeIcon
+                  className='search__searchbar-icon search__searchbar-icon-exit'
+                  icon={faTimes}
+                  size='lg'
+                  onClick={() => setInputText('')}
+                />
+              </div>
+            ) : (
+              <div
+                style={{ display: 'flex' }}
+                onClick={() => setSelectedParking(null)}
+                className='search__back'
+              >
+                <FontAwesomeIcon
+                  icon={faChevronLeft}
+                  size='lg'
+                  className='search__back-icon'
+                />
+                <span className='search__back-text'>Back</span>
+              </div>
+            )}
+          </>
         ) : (
-          <div
-            style={{ display: 'flex' }}
-            onClick={() => setSelectedParking(null)}
-            className='search__back'
-          >
-            <FontAwesomeIcon
-              icon={faChevronLeft}
-              size='lg'
-              className='search__back-icon'
-            />
-            <span className='search__back-text'>Back</span>
-          </div>
+          <>
+            <h3 className='search__heading heading-secondary padding-tb-2'>
+              Booked parking
+            </h3>
+          </>
         )}
       </div>
-      <SelectableLocationList
-        selectedParking={selectedParking}
-        setSelectedParking={setSelectedParking}
-        data={data}
-      />
+      {!isBooked ? (
+        <SelectableLocationList
+          selectedParking={selectedParking}
+          setSelectedParking={setSelectedParking}
+          data={data}
+        />
+      ) : (
+        <BookedParking
+          item={selectedParking}
+          setSelectedParking={setSelectedParking}
+        />
+      )}
     </div>
   )
 }
