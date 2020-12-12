@@ -1,0 +1,4 @@
+@mixin border-light-top-bottom {
+  border-top: 1px solid var(--color-light-grey);
+  border-bottom: 1px solid var(--color-light-grey);
+}

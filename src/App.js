@@ -5,9 +5,11 @@ import Navbar from './components/Layout/Navbar'
 import Map from './components/map/Map'
 import Search from './components/map/Search'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import AccountModal from './components/auth/AccountModal'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const [accountModalActive, setAccountModalActive] = useState(false)
 
   // testing
   useEffect(() => {
@@ -19,7 +21,16 @@ function App() {
         className='App'
         style={{ minHeight: '100vh', backgroundColor: 'red' }}
       >
-        <Navbar />
+        <Navbar
+          accountModalActive={accountModalActive}
+          setAccountModalActive={setAccountModalActive}
+        />
+        {accountModalActive && (
+          <AccountModal
+            accountModalActive={accountModalActive}
+            setAccountModalActive={setAccountModalActive}
+          />
+        )}
         <Switch>
           <Route exact={true} path='/'>
             {!isAuthenticated ? (

@@ -1,4 +1,8 @@
 @import 'sass/base.scss';
+@import 'sass/mixins.scss';
+
+// components
+@import 'sass/account-modal.scss';
 @import 'sass/booked.scss';
 @import 'sass/components.scss';
 @import 'sass/map.scss';
