@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SignUp = () => {
+const SignUp = ({ isAuthenticated, setIsAuthenticated }) => {
   return (
     <div className='signup'>
       <div className='signup__container'>
@@ -143,7 +143,11 @@ const SignUp = () => {
               </span>
               and <span className='underline'>Privacy Policy</span>
             </p>
-            <a href='' className='signup__button button-primary'>
+            <a
+              href='#'
+              className='signup__button button-primary'
+              onClick={() => setIsAuthenticated(!isAuthenticated)}
+            >
               Sign up
             </a>
           </div>

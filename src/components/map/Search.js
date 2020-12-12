@@ -8,18 +8,10 @@ import {
 import SelectableLocationList from './SelectableLocationList'
 import BookedParking from './BookedParking'
 
-const Search = () => {
+const Search = ({ isAuthenticated }) => {
   const [inputText, setInputText] = useState('')
-  const [selectedParking, setSelectedParking] = useState({
-    estimatedTravelTime: {
-      unit: 'minutes',
-      time: 14,
-    },
-    streetName: 'Streetname 45',
-    zipCode: '2400 københavn NV',
-    hourlyRate: '2.00',
-  })
-  const [isBooked, setIsBooked] = useState(true)
+  const [selectedParking, setSelectedParking] = useState(false)
+  const [isBooked, setIsBooked] = useState(false)
 
   const [data] = useState([
     {
@@ -118,6 +110,8 @@ const Search = () => {
           selectedParking={selectedParking}
           setSelectedParking={setSelectedParking}
           data={data}
+          isAuthenticated={isAuthenticated}
+          setIsBooked={setIsBooked}
         />
       ) : (
         <BookedParking

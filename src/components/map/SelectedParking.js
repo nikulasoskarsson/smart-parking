@@ -6,7 +6,7 @@ import {
   faClock,
 } from '@fortawesome/free-solid-svg-icons'
 
-const SelectedParking = ({ item }) => {
+const SelectedParking = ({ item, setIsBooked, isAuthenticated }) => {
   return (
     <div>
       <div className='search__location-item padding-bottom-2'>
@@ -49,10 +49,20 @@ const SelectedParking = ({ item }) => {
             </h3>
           </div>
         </div>
-        <div className='button-gray margin-0-auto'>Book Parking Space</div>
-        <p className='login-text text-align-center margin-top-2 margin-bottom-2'>
-          Please <a href='#'>log in</a> to book a parking space
-        </p>
+        <div
+          className='button-gray margin-0-auto'
+          onClick={() => setIsBooked(true)}
+          style={
+            isAuthenticated ? { background: '#82bd50', color: '#fff' } : {}
+          }
+        >
+          Book Parking Space
+        </div>
+        {!isAuthenticated && (
+          <p className='login-text text-align-center margin-top-2 margin-bottom-2'>
+            Please <a href='#'>log in</a> to book a parking space
+          </p>
+        )}
       </div>
     </div>
   )

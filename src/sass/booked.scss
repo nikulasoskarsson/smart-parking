@@ -1,0 +1,33 @@
+.booked {
+  &-text {
+    font-size: 2rem;
+    padding: 0 4rem;
+  }
+  &__button-container {
+    display: flex;
+    justify-content: center;
+  }
+  &__button {
+    height: 5rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    background: black;
+    color: #fff;
+    justify-content: space-around;
+    border-radius: 0.5rem;
+    margin: 0 1rem;
+    &-img {
+      height: 3rem;
+    }
+
+    &-text-sm {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+    &-text-lg {
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+    }
+  }
+}

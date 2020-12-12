@@ -1,0 +1,22 @@
+.btn {
+  padding: 1.5rem 3rem;
+  background: #444;
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__price {
+    color: green;
+
+    &-orange {
+      background: orange;
+    }
+    &-big {
+      transform: scale(1.2);
+    }
+  }
+}

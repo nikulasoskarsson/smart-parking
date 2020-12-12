@@ -8,11 +8,17 @@ const SelectableLocationList = ({
   selectedParking,
   setSelectedParking,
   data,
+  isAuthenticated,
+  setIsBooked,
 }) => {
   return (
     <div className='search__locations margin-top-2'>
       {selectedParking ? (
-        <SelectedParking item={selectedParking} />
+        <SelectedParking
+          item={selectedParking}
+          isAuthenticated={isAuthenticated}
+          setIsBooked={setIsBooked}
+        />
       ) : (
         <>
           {data.length ? (
