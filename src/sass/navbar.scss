@@ -1,14 +1,43 @@
 .navbar {
   height: 8rem;
-  background: var(--color-light-grey);
+  background: #fff;
+  width: 100%;
+  position: relative;
   &__container {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 4rem;
+
+    @include respond(tablet) {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 501;
+      width: 50%;
+      background: #f5f5f5;
+    }
+
+    @include respond(tablet) {
+      flex-direction: column-reverse;
+      padding-top: 6rem;
+      justify-content: flex-end;
+
+      align-items: flex-start;
+    }
+
+    &-hidden {
+      @include respond(tablet) {
+        display: none;
+      }
+    }
   }
   &__logo {
+    @include respond(tablet) {
+      display: none;
+    }
     &-text {
       font-size: 2rem;
     }
@@ -16,9 +45,16 @@
   &__list {
     display: flex;
     list-style: none;
+
+    @include respond(tablet) {
+      flex-direction: column;
+    }
     &-item {
       display: flex;
       align-items: center;
+      @include respond(tablet) {
+        margin: 1rem 0;
+      }
     }
     &-item:not(:last-child) {
       margin-right: 6rem;
@@ -35,8 +71,34 @@
   }
 
   &__user {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    @include respond(tablet) {
+      padding-bottom: 4rem;
+    }
     &-icon {
       font-size: 4rem;
+      border: 1px solid #444;
+      border-radius: 50%;
+      @include respond(tablet) {
+        margin-right: 2rem;
+      }
     }
+    &-name {
+      visibility: hidden;
+      font-size: 1.8rem;
+      @include respond(tablet) {
+        visibility: visible;
+      }
+    }
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    z-index: 502;
   }
 }

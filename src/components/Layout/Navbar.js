@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faParking,
@@ -7,12 +7,29 @@ import {
   faQuestionCircle,
   faCheck,
   faUserCircle,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = ({ accountModalActive, setAccountModalActive }) => {
+  const [isNavActive, setIsNavActive] = useState(false)
+
   return (
     <div className='navbar'>
-      <div className='navbar__container'>
+      <div
+        className={isNavActive ? 'hamburger hamburger__active' : 'hamburger'}
+        onClick={() => setIsNavActive(!isNavActive)}
+      >
+        <div className='hamburger-bar1'></div>
+        <div className='hamburger-bar2'></div>
+        <div className='hamburger-bar3'></div>
+      </div>
+      <div
+        className={
+          isNavActive
+            ? 'navbar__container'
+            : 'navbar__container navbar__container-hidden'
+        }
+      >
         <div className='navbar__logo'>
           <h3 className='navbar__logo-text'>
             <span className='orange'>SMART</span>
@@ -71,6 +88,8 @@ const Navbar = ({ accountModalActive, setAccountModalActive }) => {
             icon={faUserCircle}
             size='lg'
           />
+
+          <span className='navbar__user-name'>Nikulás Óskarsson</span>
         </div>
       </div>
     </div>
