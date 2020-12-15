@@ -6,6 +6,7 @@ import Map from './components/map/Map'
 import Search from './components/map/Search'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import AccountModal from './components/auth/AccountModal'
+import BottomTabNavigation from './components/Layout/BottomTabNavigation'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true)
@@ -47,6 +48,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <BottomTabNavigation />
     </Router>
   )
 }
