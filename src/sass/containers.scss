@@ -1,0 +1,12 @@
+// Layout for different page contianers
+
+.app-container {
+  max-width: 100%;
+}
+.home-container {
+  display: flex;
+
+  @include respond(tablet) {
+    flex-direction: column;
+  }
+}

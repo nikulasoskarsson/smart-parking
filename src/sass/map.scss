@@ -6,7 +6,12 @@
   border-radius: 0.5rem;
   margin: 1rem;
   position: relative;
-  
+
+  @include respond(tablet) {
+    height: calc(65vh - 8rem);
+    width: 100%;
+    margin: 0;
+  }
 
   &__img {
     border-radius: 0.5rem;

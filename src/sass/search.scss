@@ -6,9 +6,26 @@
   background: #fff;
   border-radius: 0.5rem;
   overflow: hidden;
+
+  @include respond(tablet) {
+    height: 35vh;
+    width: 100%;
+    margin: 0;
+  }
   &__search-content {
     padding: 0 4rem;
     height: 30%;
+
+    @include respond(tablet) {
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+    }
+  }
+  &__heading {
+    @include respond(tablet) {
+      display: none;
+    }
   }
 
   &__searchbar {
@@ -105,7 +122,18 @@
       &-left {
         position: relative;
       }
-
+      &-right {
+        @include respond(tablet) {
+          display: flex;
+          align-items: center;
+        }
+        svg {
+          @include respond(tablet) {
+            margin-bottom: 4rem;
+            margin-left: 1rem;
+          }
+        }
+      }
       &-time {
         font-weight: medium;
       }

@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <div
-        className='App'
+        className='App app-container'
         style={{ minHeight: '100vh', backgroundColor: 'red' }}
       >
         <Navbar
@@ -39,7 +39,7 @@ function App() {
                 setIsAuthenticated={setIsAuthenticated}
               />
             ) : (
-              <div style={{ display: 'flex' }}>
+              <div className='home-container'>
                 <Map />
                 <Search isAuthenticated={isAuthenticated} />
               </div>
