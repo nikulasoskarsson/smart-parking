@@ -1,0 +1,41 @@
+.mobile-navbar {
+    height: 5rem;
+    background: #fff;
+    width: 100%;
+    padding: 0 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 550;
+    box-shadow: 4px 1px 4px 4px rgba($color: #444, $alpha: 0.3);
+    @include respond(tablet){
+        display: none;
+    }
+    
+    &__list {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      justify-content: space-between;
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+        @include respond(tablet) {
+          margin: 0;
+        }
+      }
+
+      &-icon {
+        font-size: 2rem;
+      }
+    }
+    &__link {
+      text-decoration: none;
+      color: var(--color-black);
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,5 +1,6 @@
-@import 'sass/base.scss';
 @import 'sass/mixins.scss';
+@import 'sass/base.scss';
+
 
 // components
 @import 'sass/account-modal.scss';
@@ -7,6 +8,7 @@
 @import 'sass/components.scss';
 @import 'sass/map.scss';
 @import 'sass/navbar.scss';
+@import 'sass/mobile-navbar.scss';
 @import 'sass/search.scss';
 @import 'sass/signup.scss';
 @import 'sass/utilites.scss';

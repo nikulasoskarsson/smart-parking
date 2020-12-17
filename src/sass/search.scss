@@ -1,19 +1,33 @@
 .search {
-  margin: 1rem;
-  height: 45vw;
-  max-height: calc(100vh - 12rem);
-  width: 30%;
+  position: relative;
+  top: calc(40vh - 6rem);
+  margin: 1rem 0;
+  width: 100%;
+  height: calc(60vh - 4rem);
   background: #fff;
-  border-radius: 0.5rem;
   overflow: hidden;
+  @include respond(tablet){
+    height: 100%;
+    max-height: calc(100vh - 16rem);
+    width: 30%;
+    top: 8rem;
+    margin: 1rem 0 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+  }
   &__search-content {
-    padding: 0 4rem;
-    height: 30%;
+    padding: 2rem 4rem 0 4rem;
+  }
+  &__heading{
+    display: none;
+    @include respond(tablet){
+      display: block;
+    }
   }
 
   &__searchbar {
-    height: 5rem;
     width: 100%;
+    padding: 1rem 0;
     background: #ebebeb;
     border: 1px solid #7c7c7c;
     border-radius: 0.5rem;
@@ -30,10 +44,11 @@
 
     &-icon {
       position: absolute;
-      font-size: 2rem;
       top: 50%;
       transform: translateY(-50%);
-
+      @include respond(tablet){
+        font-size: 2rem;
+      }
       &-search {
         left: 2rem;
       }
@@ -60,7 +75,7 @@
   // List of locations
   &__locations {
     overflow-y: scroll;
-    height: 70%;
+    height: 80%;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -90,16 +105,16 @@
   }
   &__location {
     &-item {
-      min-height: 16rem;
+      padding: 1.5rem 1rem;
       border-top: 1px solid #ebebeb;
       border-bottom: 1px solid #ebebeb;
       cursor: pointer;
 
       &-content {
-        padding: 4rem 4rem 0rem 4rem;
+        padding: 0;
 
         display: grid !important;
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns:  3fr 2fr;
       }
 
       &-left {
@@ -107,21 +122,24 @@
       }
 
       &-time {
+        margin: 0 0 1rem 0.8rem;
         font-weight: medium;
+      }
+      &-location{
+        margin-left: 2.5rem;
       }
       &-time,
       &-location {
-        font-size: 1.6rem;
-        margin-left: 4rem;
+        font-size: 1.2rem;
+        @include respond(tablet){
+          font-size: 1.6rem;
+        }
       }
 
       &-icon {
         font-size: 2.4rem;
         &-marker {
           color: #e57a41;
-          position: absolute;
-          left: 0;
-          top: 5px;
           padding: inherit;
         }
         &-clock {
@@ -132,20 +150,28 @@
           padding: inherit;
         }
         &-chevron {
-          margin-top: 4rem;
           color: #676767;
         }
       }
       &-button {
-        margin-left: 4rem;
+        margin-left: 3rem;
+        width: auto;
       }
       &-right {
-        justify-self: end;
-        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &-right-booked{
+        align-items: flex-start;
       }
       &-rate {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         color: #e57a41;
+        
+        @include respond(tablet){
+          font-size: 1.6rem;
+        }
       }
     }
   }

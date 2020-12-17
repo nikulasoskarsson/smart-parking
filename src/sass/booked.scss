@@ -1,7 +1,28 @@
 .booked {
+  display: none;
+  @include respond(tablet){
+    display: block;
+  }
   &-text {
     font-size: 2rem;
     padding: 0 4rem;
+    &-sm{
+      font-size: 1.2rem;
+      @include respond(tablet){
+        font-size: 1.6rem;
+      }
+    }
+    &-lg {
+      font-size: 2rem;
+      margin-top: 5rem;
+      text-align: center;
+      @include respond(tablet){
+        font-size: 2.4rem;
+      }
+      a{
+        color: var(--color-orange);
+      }
+    }
   }
   &__button-container {
     display: flex;
@@ -24,10 +45,63 @@
     &-text-sm {
       font-size: 1.2rem;
       line-height: 1.2rem;
+      @include respond(tablet){
+        font-size: 2rem;
+        line-height: 2rem;
+      }
     }
     &-text-lg {
       font-size: 2.4rem;
       line-height: 2.4rem;
+    }
+  }
+}
+.edit-icon{
+  margin-left: 1rem;
+}
+.confirmation-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  z-index: 999;
+  padding: 10% 5%;
+  @include respond(tablet){
+    padding: 10% 20%;
+  }
+  &-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    @include respond(table){
+      width: 60%;
+      height: 50%;
+    }
+    &-text{
+      margin-top: 3rem;
+      font-size: 1.2rem;
+      @include respond(tablet){
+        font-size: 1.6rem;
+      }
+    }
+  }
+  
+  .success-container{
+    text-align: center;
+    &-icon{
+      font-size: 10rem;
+      color: var(--color-green);
+    }
+    &-text{
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
     }
   }
 }

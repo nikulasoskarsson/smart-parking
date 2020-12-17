@@ -1,10 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faParking,
   faCreditCard,
   faSignOutAlt,
   faChevronRight,
+  faCog,
+  faQuestionCircle
 } from '@fortawesome/free-solid-svg-icons'
 import User from './cat.png'
 
@@ -26,9 +27,39 @@ const AccountModal = () => {
             icon={faCreditCard}
             size='lg'
           />
-          <a href='' className='account__menu-item-link'>
+          <div  className='account__menu-item-link'>
             Payment Information
-          </a>
+          </div>
+          <FontAwesomeIcon
+            className='account__menu-item-chevron'
+            icon={faChevronRight}
+            size='lg'
+          />
+        </li>
+        <li className='account__menu-item'>
+          <FontAwesomeIcon
+            className='account__menu-item-icon'
+            icon={faCog}
+            size='lg'
+          />
+          <div className='account__menu-item-link'>
+            Settings
+          </div>
+          <FontAwesomeIcon
+            className='account__menu-item-chevron'
+            icon={faChevronRight}
+            size='lg'
+          />
+        </li>
+        <li className='account__menu-item'>
+          <FontAwesomeIcon
+            className='account__menu-item-icon'
+            icon={faQuestionCircle}
+            size='lg'
+          />
+          <div  className='account__menu-item-link'>
+            Help
+          </div>
           <FontAwesomeIcon
             className='account__menu-item-chevron'
             icon={faChevronRight}
@@ -42,9 +73,9 @@ const AccountModal = () => {
             icon={faSignOutAlt}
             size='lg'
           />
-          <a href='' className='account__menu-item-link'>
+          <div  className='account__menu-item-link'>
             Log Out
-          </a>
+          </div>
         </li>
       </ul>
     </div>

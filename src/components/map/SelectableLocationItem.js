@@ -19,7 +19,7 @@ const SelectableLocationItem = ({ item, setSelectedParking }) => {
               icon={faMapMarkerAlt}
               size='lg'
             />
-            <h3 className='search__location-item-time margin-bottom-2'>
+            <h3 className='search__location-item-time'>
               A{' '}
               {item.estimatedTravelTime.time +
                 ' ' +

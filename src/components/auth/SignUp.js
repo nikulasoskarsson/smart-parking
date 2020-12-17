@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Link } from 'react-router-dom'
 
 const SignUp = ({ isAuthenticated, setIsAuthenticated }) => {
   return (
@@ -143,13 +144,12 @@ const SignUp = ({ isAuthenticated, setIsAuthenticated }) => {
               </span>
               and <span className='underline'>Privacy Policy</span>
             </p>
-            <a
-              href='#'
+            <Link
+              to='/'
               className='signup__button button-primary'
-              onClick={() => setIsAuthenticated(!isAuthenticated)}
             >
               Sign up
-            </a>
+            </Link>
           </div>
         </form>
       </div>

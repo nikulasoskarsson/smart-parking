@@ -1,7 +1,4 @@
-import React, { useState } from 'react'
 import SelectableLocationItem from './SelectableLocationItem'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import SelectedParking from './SelectedParking'
 
 const SelectableLocationList = ({
@@ -9,15 +6,18 @@ const SelectableLocationList = ({
   setSelectedParking,
   data,
   isAuthenticated,
-  setIsBooked,
+  bookingConfirmed,
+  setBookingConfirmed
 }) => {
+  
   return (
     <div className='search__locations margin-top-2'>
       {selectedParking ? (
         <SelectedParking
           item={selectedParking}
           isAuthenticated={isAuthenticated}
-          setIsBooked={setIsBooked}
+          bookingConfirmed={bookingConfirmed}
+          setBookingConfirmed={setBookingConfirmed}
         />
       ) : (
         <>
@@ -25,6 +25,7 @@ const SelectableLocationList = ({
             <>
               {data.map((item) => (
                 <SelectableLocationItem
+                  key={item.id}
                   item={item}
                   setSelectedParking={setSelectedParking}
                 />

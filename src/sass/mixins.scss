@@ -6,7 +6,7 @@
 // Media quries
 @mixin respond($breakpoint) {
   @if $breakpoint == tablet {
-    @media (max-width: 56.25em) {
+    @media (min-width: 769px) {
       // 900px
       @content;
     }
