@@ -17,15 +17,11 @@ const BottomTabNavigation = () => {
             icon={faMapMarkerAlt}
             size='lg'
           />
-          <a href='' className='bottom-nav-link'>
-            Map
-          </a>
+          <div className='bottom-nav-link'>Map</div>
         </li>
         <li className='bottom-nav__list-item'>
           <FontAwesomeIcon className='bottom-nav-icon' icon={faCar} size='lg' />
-          <a href='' className='bottom-nav-link'>
-            Your parking
-          </a>
+          <div className='bottom-nav-link'>Your parking</div>
         </li>
         <li className='bottom-nav__list-item'>
           <FontAwesomeIcon
@@ -33,15 +29,11 @@ const BottomTabNavigation = () => {
             icon={faHistory}
             size='lg'
           />
-          <a href='' className='bottom-nav-link'>
-            History
-          </a>
+          <div className='bottom-nav-link'>History</div>
         </li>
         <li className='bottom-nav__list-item'>
           <FontAwesomeIcon className='bottom-nav-icon' icon={faCog} size='lg' />
-          <a href='' className='bottom-nav-link'>
-            More
-          </a>
+          <div className='bottom-nav-link'>More</div>
         </li>
       </ul>
     </div>
