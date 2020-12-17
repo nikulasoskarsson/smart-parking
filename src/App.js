@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState } from 'react'
 import './App.scss'
 import SignUp from './components/auth/SignUp'
 import Login from './components/auth/Login'
@@ -19,11 +19,9 @@ function App() {
 
   return (
     <Router>
-      <div
-        className='App'
-        style={{ minHeight: '100vh', }} 
-      >
+      <div className='App' style={{ minHeight: '100vh' }}>
         <Navbar
+          isAuthenticated={isAuthenticated}
           accountModalActive={accountModalActive}
           setAccountModalActive={setAccountModalActive}
         />
@@ -48,8 +46,8 @@ function App() {
             <Login
               isAuthenticated={isAuthenticated}
               setIsAuthenticated={setIsAuthenticated}
-              selectedParking = {selectedParking}
-              setSelectedParking ={setSelectedParking}
+              selectedParking={selectedParking}
+              setSelectedParking={setSelectedParking}
             />
           </Route>
           <Route path='/signup'>
@@ -73,7 +71,7 @@ function App() {
           <Route path='/'>
             <div className='content'>
               <Map />
-              <Search 
+              <Search
                 isAuthenticated={isAuthenticated}
                 selectedParking={selectedParking}
                 setSelectedParking={setSelectedParking}

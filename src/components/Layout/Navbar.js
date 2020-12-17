@@ -3,17 +3,19 @@ import {
   faParking,
   faQuestionCircle,
   faUserCircle,
-  faMapMarkerAlt
+  faMapMarkerAlt,
+  faUser,
+  faUserPlus,
 } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 
-const Navbar = ({ 
+const Navbar = ({
   accountModalActive,
   setAccountModalActive,
   item,
   setSelectedParking,
+  isAuthenticated,
 }) => {
-
   return (
     <div className='navbar'>
       <div className='navbar__logo'>
@@ -23,62 +25,76 @@ const Navbar = ({
         </h3>
       </div>
       <ul className='navbar__list'>
-        <NavLink 
-          className='navbar__list-item'
-          to='/'
-          exact
-        >
+        <NavLink className='navbar__list-item' to='/' exact>
           <FontAwesomeIcon
             className='navbar__list-icon'
             icon={faMapMarkerAlt}
             size='lg'
           />
-          <span className='navbar__link'>
-            Map
-          </span>
+          <span className='navbar__link'>Map</span>
         </NavLink>
-        <NavLink 
-          className='navbar__list-item'
-          
-          to={'/your-parking'}
-          onClick={() => {
-            item={item}
-            setSelectedParking={setSelectedParking}
-          }}
-        >
-          <FontAwesomeIcon
-            className='navbar__list-icon'
-            icon={faParking}
-            size='lg'
-          />
-          <span className='navbar__link'>
-            Your Parking
-          </span>
-        </NavLink>
+        {isAuthenticated && (
+          <NavLink
+            className='navbar__list-item'
+            to={'/your-parking'}
+            onClick={() => {
+              item = { item }
+              setSelectedParking = { setSelectedParking }
+            }}
+          >
+            <FontAwesomeIcon
+              className='navbar__list-icon'
+              icon={faParking}
+              size='lg'
+            />
+            <span className='navbar__link'>Your Parking</span>
+          </NavLink>
+        )}
+
         <li className='navbar__list-item'>
           <FontAwesomeIcon
             className='navbar__list-icon'
             icon={faQuestionCircle}
             size='lg'
           />
-          <span className='navbar__link'>
-            Help
-          </span>
+          <span className='navbar__link'>Help</span>
         </li>
-        
-      </ul>
-      <div
-        className='navbar__user'
-        onClick={() => setAccountModalActive(!accountModalActive)}
-      >
-        <FontAwesomeIcon
-          className='navbar__user-icon'
-          icon={faUserCircle}
-          size='lg'
-        />
+        {!isAuthenticated && (
+          <>
+            <NavLink to='/login' className='navbar__list-item'>
+              <FontAwesomeIcon
+                className='navbar__list-icon'
+                icon={faUser}
+                size='lg'
+              />
+              <span className='navbar__link'>Log in</span>
+            </NavLink>
 
-        <span className='navbar__user-name'>Nikulás Óskarsson</span>
-      </div>
+            <NavLink to='/signup' className='navbar__list-item'>
+              <FontAwesomeIcon
+                className='navbar__list-icon'
+                icon={faUserPlus}
+                size='lg'
+              />
+              <span className='navbar__link'>Sign up</span>
+            </NavLink>
+          </>
+        )}
+      </ul>
+      {isAuthenticated && (
+        <div
+          className='navbar__user'
+          onClick={() => setAccountModalActive(!accountModalActive)}
+        >
+          <FontAwesomeIcon
+            className='navbar__user-icon'
+            icon={faUserCircle}
+            size='lg'
+          />
+
+          <span className='navbar__user-name'>Nikulás Óskarsson</span>
+        </div>
+      )}
     </div>
   )
 }
