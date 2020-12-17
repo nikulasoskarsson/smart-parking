@@ -120,7 +120,18 @@
       &-left {
         position: relative;
       }
-
+      &-right {
+        @include respond(tablet) {
+          display: flex;
+          align-items: center;
+        }
+        svg {
+          @include respond(tablet) {
+            margin-bottom: 4rem;
+            margin-left: 1rem;
+          }
+        }
+      }
       &-time {
         margin: 0 0 1rem 0.8rem;
         font-weight: medium;

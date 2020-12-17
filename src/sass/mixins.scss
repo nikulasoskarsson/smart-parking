@@ -11,4 +11,11 @@
       @content;
     }
   }
+
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
 }

@@ -31,7 +31,9 @@ const SelectableLocationItem = ({ item, setSelectedParking }) => {
             </h3>
           </div>
           <p className='search__location-item-location'>{item.streetName}</p>
-          <p className='search__location-item-location'>{item.zipCode}</p>
+          <p className='search__location-item-location hidden-tab'>
+            {item.zipCode}
+          </p>
         </div>
         <div className='search__location-item-right'>
           <h3 className='search__location-item-rate'>

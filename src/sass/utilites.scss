@@ -46,3 +46,9 @@
 .text-align-center {
   text-align: center;
 }
+
+.hidden-tab {
+  @include respond(tablet) {
+    display: none;
+  }
+}

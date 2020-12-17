@@ -5,6 +5,7 @@
   width: 100%;
   height: calc(40% - 4rem);
   background: #fff;
+
   z-index: 2;
   @include respond(tablet){
     top: 8rem;
@@ -15,6 +16,7 @@
     border-radius: 0.5rem;
   }
   
+
 
   &__img {
     height: 100%;

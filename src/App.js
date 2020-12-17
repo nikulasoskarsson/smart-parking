@@ -9,6 +9,7 @@ import Search from './components/map/Search'
 import YourParking from './components/your-parking/YourParking'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import AccountModal from './components/auth/AccountModal'
+import BottomTabNavigation from './components/Layout/BottomTabNavigation'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -20,7 +21,7 @@ function App() {
     <Router>
       <div
         className='App'
-        style={{ minHeight: '100vh', }}
+        style={{ minHeight: '100vh', }} 
       >
         <Navbar
           accountModalActive={accountModalActive}
@@ -83,6 +84,7 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <BottomTabNavigation />
     </Router>
   )
 }
