@@ -5,7 +5,7 @@ const Login = ({ isAuthenticated, setIsAuthenticated }) => {
   return (
     <div className='signup'>
       <div className='signup__container'>
-        <h3 className='signup__heading'>Sign up</h3>
+        <h3 className='signup__heading'>Log in</h3>
         <form action='#' className='signup__form'>
           <div className='signup__row'>
             <div className='signup__form-field'>
@@ -16,7 +16,8 @@ const Login = ({ isAuthenticated, setIsAuthenticated }) => {
                 Email
               </label>
               <input
-                type='text'a
+                type='text'
+                a
                 id='email'
                 className='signup__input'
                 placeholder='email'

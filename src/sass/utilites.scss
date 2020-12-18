@@ -52,3 +52,9 @@
     display: none;
   }
 }
+.hidden-large {
+  visibility: hidden;
+  @include respond(tabletMax) {
+    visibility: visible;
+  }
+}
